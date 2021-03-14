@@ -1,0 +1,20 @@
+=> dotnet --info
+=> dotnet new -h
+=> dotnet new -n DatingApp.API
+=> dotnet run (Walking Skeleton) runnable API Project
+=> Create a Model folder
+	-> Create a Value.cs class
+=> Create a Data folder
+	-> Create a DataContext.cs class (Inherite from DbContext class) and create a constructor 
+		
+tutorial 6=> 10.9sec
+
+
+==> UI Generate
+=> ng new DatingAppUI
+=> add some necessary extension
+=> Add HttpClientModule to app.module.ts and import it
+=> In StartUp.cs file add cores for support the browser
+=> Add a User table and add-migration and update-database
+
+tutorial 12. Token Authentication 1.31 Min
