@@ -20,3 +20,14 @@ tutorial 6=> 10.9sec
 tutorial 12. Token Authentication 1.31 Min
 
 End of sec 4
+
+=> Error handle
+
+End of sec 5
+
+=> Use Alertify for notification -> npm i alertifyjs
+=> Use authO angular jwt -> npm install @auth0/angular-jwt
+=> Use ngx-bootstrap for dropdown, because we do not use jquery -> npm install ngx-bootstrap --save
+=> Use bootswatch for themes.
+
+End of sec 6

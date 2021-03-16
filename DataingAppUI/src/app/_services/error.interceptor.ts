@@ -1,20 +1,25 @@
-import {HttpErrorResponse, HttpInterceptor, HTTP_INTERCEPTORS} from '@angular/common/http';
-import {Injectable} from '@angular/core';
-import {throwError} from 'rxjs';
-import {catchError} from 'rxjs/operators';
+import {
+  HttpErrorResponse,
+  HttpInterceptor,
+  HTTP_INTERCEPTORS,
+} from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
   intercept(
     req: import('@angular/common/http').HttpRequest<any>,
     next: import('@angular/common/http').HttpHandler
-  ): import('rxjs').Observable<import('@angular/common/http').HttpEvent<any> {
+  ): import('rxjs').Observable<import('@angular/common/http').HttpEvent<any>> {
     return next.handle(req).pipe(
-      catchError(error => {
+      catchError((error) => {
         if (error.status === 401) {
           return throwError(error.statusText);
         }
-        if (error instanceof HttpErrorResponse) { // 500 types error
+        if (error instanceof HttpErrorResponse) {
+          // 500 types error
           const applicationError = error.headers.get('Application-Error');
           if (applicationError) {
             return throwError(applicationError);
@@ -39,5 +44,5 @@ export class ErrorInterceptor implements HttpInterceptor {
 export const ErrorInterceptorProvider = {
   provide: HTTP_INTERCEPTORS,
   useClass: ErrorInterceptor,
-  multi: true
+  multi: true,
 };
