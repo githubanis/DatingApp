@@ -18,3 +18,5 @@ tutorial 6=> 10.9sec
 => Add a User table and add-migration and update-database
 
 tutorial 12. Token Authentication 1.31 Min
+
+End of sec 4
