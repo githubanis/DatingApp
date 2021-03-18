@@ -74,6 +74,7 @@ namespace DatingApp.API.Controllers
             return NoContent();
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public async Task<ActionResult<ValueDTO>> CreateValue(ValueDTO ValueDTO)
         {
