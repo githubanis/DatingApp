@@ -1,17 +1,17 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-primary">
   <div class="container">
-    <a class="navbar-brand" href="#">My App</a>
+    <a class="navbar-brand" routerLink="/home" routerLinkActive="active">My App</a>
 
 
     <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Matches</a>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/members" routerLinkActive="active">Matches</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Lists</a>
+        <a class="nav-link" routerLink="/lists" routerLinkActive="active">Lists</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Messages</a>
+        <a class="nav-link" routerLink="/messages" routerLinkActive="active">Messages</a>
       </li>
     </ul>
 
@@ -23,13 +23,15 @@
       <div class="dropdown-menu mt-3" *dropdownMenu>
         <a class="dropdown-item" href="#"><i class="fa fa-user"></i>Edit Profile</a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item"  (click)="logout()"><i class="fa fa-sign-out"></i>Logout</a>
+        <a class="dropdown-item" (click)="logout()"><i class="fa fa-sign-out"></i>Logout</a>
       </div>
     </div>
 
     <form *ngIf="!loggedIn()" #loginForm="ngForm" class="form-inline mt-2 mt-md-0" (ngSubmit)="login()">
-      <input class="form-control mr-sm-2" type="text" name="username" placeholder="Username" #username="ngModel" required [(ngModel)]="model.username">
-      <input class="form-control mr-sm-2" type="password" name="password" placeholder="Password" #password="ngModel" required [(ngModel)]="model.password">
+      <input class="form-control mr-sm-2" type="text" name="username" placeholder="Username" #username="ngModel"
+        required [(ngModel)]="model.username">
+      <input class="form-control mr-sm-2" type="password" name="password" placeholder="Password" #password="ngModel"
+        required [(ngModel)]="model.password">
       <button [disabled]="!loginForm.valid" class="btn btn-success my-2 my-sm-0" type="submit">Login</button>
     </form>
   </div>
