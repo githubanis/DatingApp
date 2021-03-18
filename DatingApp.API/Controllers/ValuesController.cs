@@ -23,7 +23,6 @@ namespace DatingApp.API.Controllers
             _context = context;
         }
 
-        [AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ValueDTO>>> GetValues()
         {
@@ -32,7 +31,6 @@ namespace DatingApp.API.Controllers
                 .ToListAsync();
         }
 
-        [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<ActionResult<ValueDTO>> GetValue(int id)
         {
@@ -74,7 +72,6 @@ namespace DatingApp.API.Controllers
             return NoContent();
         }
 
-        [AllowAnonymous]
         [HttpPost]
         public async Task<ActionResult<ValueDTO>> CreateValue(ValueDTO ValueDTO)
         {

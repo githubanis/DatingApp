@@ -31,3 +31,18 @@ End of sec 5
 => Use bootswatch for themes.
 
 End of sec 6
+
+=> Create a routermodule in angular project for routing and add import it on app.module.ts
+=> create a guard -> ng g guard auth --skipTest
+End of sec 7
+
+=> Extend user entity and add a ICollection property for Photo
+=> dotnet entity framework migration operation -> If, do not add two prop(User, UserId) in photo entity it will operate photo table deletion as resticded.
+	but if we add this two prop the it will use cascading deletion.
+=> Use DTO(Data Transfer Object) for getting shaped data.
+=> Use automapper for map in the Api Controller
+	-> Install package Microsoft.Aspnetcore.Automapper
+	-> Inject the IMapper to Api Controller
+	-> Use Map() method
+	-> Add a class AutoMapperProfile and Inherit from Profile class, and use CreateMap<SourceClass, DestinationClass>();
+End of sec 8
