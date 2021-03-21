@@ -46,3 +46,8 @@ End of sec 7
 	-> Use Map() method
 	-> Add a class AutoMapperProfile and Inherit from Profile class, and use CreateMap<SourceClass, DestinationClass>();
 End of sec 8
+=> designing the members card
+	-> inside card add buttons
+=> designing the member details page, add router link for details, and use ? as safe navigator oparator in the details page so that the console error doesent show.
+=> Use ngx-tabsmodule for the tabing of member details
+=> Use ngx-gallery for members photo gallery
