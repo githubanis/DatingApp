@@ -22,6 +22,7 @@ using Microsoft.AspNetCore.Http;
 using DatingApp.API.Helper;
 using DatingApp.API.Repository;
 using Newtonsoft.Json;
+using DatingApp.API.Context;
 
 namespace DatingApp.API
 {
@@ -48,7 +49,9 @@ namespace DatingApp.API
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DatingApp.API", Version = "v1" });
             });
             services.AddCors();
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
             services.AddAutoMapper(typeof(DatingRepository).Assembly);
+            //services.AddTransient<Seed>();
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IDatingRepository, DatingRepository>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

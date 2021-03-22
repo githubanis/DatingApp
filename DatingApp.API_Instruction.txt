@@ -61,3 +61,14 @@ End of sec 9
 => Edit api created in api project
 
 End of sec 10
+
+=> Use Cloudinary for storing photos in cloud
+	-> In appsetting file configure the cloudinary
+=> Create Post Api and Photos Controller, add CloudinaryDotNet packege to the project and configure the api through it.
+=> Add a packege in angular for file upload npm i ng2-file-upload
+=> Add necessary code in both frontend and backend
+=> Add main photo feature by updating a field with post api
+=> Add navbar photo option from login controller by passing an extra object in response
+=> Use behavior subject for MainPhotoUrl
+
+Continue from 11-> 17
