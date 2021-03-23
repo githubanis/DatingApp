@@ -1,9 +1,5 @@
 import { NgModule } from '@angular/core';
-import {
-  BrowserModule,
-  HammerGestureConfig,
-  HAMMER_GESTURE_CONFIG,
-} from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -12,7 +8,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './_services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
@@ -32,6 +28,21 @@ import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { PreventUnsavedChanges } from './_guard/prevent-unsaved-changes.guard';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { FileUploadModule } from 'ng2-file-upload';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { Pipe, PipeTransform } from '@angular/core';
+import { TimeAgoPipe } from 'time-ago-pipe';
+
+@Pipe({
+  name: 'timeAgo',
+  pure: false,
+})
+export class TimeAgoExtendsPipePipe
+  extends TimeAgoPipe
+  implements PipeTransform {
+  transform(value: string): string {
+    return super.transform(value);
+  }
+}
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -40,6 +51,7 @@ export function tokenGetter() {
   declarations: [
     AppComponent,
     NavComponent,
+    TimeAgoExtendsPipePipe,
     HomeComponent,
     RegisterComponent,
     MemberListComponent,
@@ -52,9 +64,12 @@ export function tokenGetter() {
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     BsDropdownModule.forRoot(),
+    BsDatepickerModule.forRoot(),
     TabsModule.forRoot(),
     BrowserAnimationsModule,
     RouterModule.forRoot(routes),

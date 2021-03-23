@@ -70,5 +70,20 @@ End of sec 10
 => Add main photo feature by updating a field with post api
 => Add navbar photo option from login controller by passing an extra object in response
 => Use behavior subject for MainPhotoUrl
+=> Delete photo feature added
+	-> Make an api in photos controller
+	-> Create a service in userservice.ts and from member-edit component apply the deletion
+	-> In deletion use splice to remove from array
 
-Continue from 11-> 17
+End of sec 11
+
+=> Use Reactive form in registration form and add validation
+
+End of sec 12
+
+=> Use TimeAgoPipe in some component
+=> Use action filter for update last active time
+	-> Make a new class in Helper folder LogUserActivity
+
+End of sec 13
+continue from tutorial 6
