@@ -4,6 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -31,6 +33,7 @@ import { FileUploadModule } from 'ng2-file-upload';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { Pipe, PipeTransform } from '@angular/core';
 import { TimeAgoPipe } from 'time-ago-pipe';
+import { ListResolver } from './_resolvers/list.resolver';
 
 @Pipe({
   name: 'timeAgo',
@@ -70,6 +73,8 @@ export function tokenGetter() {
     ReactiveFormsModule,
     BsDropdownModule.forRoot(),
     BsDatepickerModule.forRoot(),
+    PaginationModule.forRoot(),
+    ButtonsModule.forRoot(),
     TabsModule.forRoot(),
     BrowserAnimationsModule,
     RouterModule.forRoot(routes),
@@ -90,6 +95,7 @@ export function tokenGetter() {
     MemberListResolver,
     MemberEditResolver,
     PreventUnsavedChanges,
+    ListResolver,
   ],
   bootstrap: [AppComponent],
 })

@@ -86,4 +86,18 @@ End of sec 12
 	-> Make a new class in Helper folder LogUserActivity
 
 End of sec 13
-continue from tutorial 6
+
+=> Add several classes in helper folder for pagination
+=> In Extension class add an extra extension function
+=> Filtering users via gender and userId
+=> Filtering via age
+=> Sorting via lastActive and created
+
+End of sec 14
+
+=> Implement likes functionality
+=> Two one to many relationship
+=> Explecitly tell the EF for foreignKey and combined primary key and restected delete
+
+end of sec 15
+
