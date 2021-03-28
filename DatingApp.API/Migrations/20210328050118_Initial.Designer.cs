@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DatingApp.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210325081053_Messages1")]
-    partial class Messages1
+    [Migration("20210328050118_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,7 +33,7 @@ namespace DatingApp.API.Migrations
 
                     b.HasIndex("LikeeId");
 
-                    b.ToTable("Like");
+                    b.ToTable("Likes");
                 });
 
             modelBuilder.Entity("DatingApp.API.Models.Message", b =>
@@ -73,7 +73,7 @@ namespace DatingApp.API.Migrations
 
                     b.HasIndex("SenderId");
 
-                    b.ToTable("Message");
+                    b.ToTable("Messages");
                 });
 
             modelBuilder.Entity("DatingApp.API.Models.Photo", b =>

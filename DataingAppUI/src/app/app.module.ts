@@ -34,6 +34,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { Pipe, PipeTransform } from '@angular/core';
 import { TimeAgoPipe } from 'time-ago-pipe';
 import { ListResolver } from './_resolvers/list.resolver';
+import {MessagesResolver} from './_resolvers/messages.resolver';
+import {MemberMessagesComponent} from './members/member-messages/member-messages.component';
 
 @Pipe({
   name: 'timeAgo',
@@ -64,6 +66,7 @@ export function tokenGetter() {
     MemberDetailsComponent,
     MemberEditComponent,
     PhotoEditorComponent,
+    MemberMessagesComponent
   ],
   imports: [
     BrowserModule,
@@ -96,6 +99,7 @@ export function tokenGetter() {
     MemberEditResolver,
     PreventUnsavedChanges,
     ListResolver,
+    MessagesResolver
   ],
   bootstrap: [AppComponent],
 })

@@ -31,7 +31,7 @@ namespace DatingApp.API.Migrations
 
                     b.HasIndex("LikeeId");
 
-                    b.ToTable("Like");
+                    b.ToTable("Likes");
                 });
 
             modelBuilder.Entity("DatingApp.API.Models.Message", b =>
@@ -44,7 +44,7 @@ namespace DatingApp.API.Migrations
                     b.Property<string>("Content")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("DeadDate")
+                    b.Property<DateTime?>("DateRead")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsRead")
@@ -71,7 +71,7 @@ namespace DatingApp.API.Migrations
 
                     b.HasIndex("SenderId");
 
-                    b.ToTable("Message");
+                    b.ToTable("Messages");
                 });
 
             modelBuilder.Entity("DatingApp.API.Models.Photo", b =>
