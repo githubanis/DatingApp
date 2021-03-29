@@ -30,15 +30,14 @@ export class MemberDetailsComponent implements OnInit {
   ngOnInit() {
     this.route.data.subscribe((data) => {
       this.user = data.user;
-      console.log(this.user);
     });
-
-    this.route.queryParams.subscribe(
-      (params) => {
-        const selectedTab = params.tab;
-        this.memberTabs.tabs[selectedTab].active = true;
-      }
-    );
+    // queryParams not working and shows one error
+    // this.route.queryParams.subscribe(
+    //   (params) => {
+    //     const selectedTab = params.tab;
+    //     this.selectTab(selectedTab > 0 ? selectedTab : 0);
+    //   }
+    // );
 
     this.galleryOptions = [
       {
@@ -67,7 +66,6 @@ export class MemberDetailsComponent implements OnInit {
   getImages(): any[] {
     const imageUrls: any[] = [];
     for (const photo of this.user.photos) {
-      console.log(photo);
       imageUrls.push({
         small: photo.url,
         medium: photo.url,
